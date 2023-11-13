@@ -27,10 +27,10 @@ public class Main {
 
       Parameter[] parameters = constructor.getParameters();
 
-      for (int i = 0; i < parameters.length; i++) {
-        System.out.print(parameters[i].getType().getName() + " " + parameters[i].getName());
+      for (int index = 0; index < parameters.length; index += 1) {
+        System.out.print(parameters[index].getType().getName() + " " + parameters[index].getName());
 
-        if (i < parameters.length - 1) {
+        if (index < parameters.length - 1) {
           System.out.print(", ");
         }
       }
@@ -48,10 +48,10 @@ public class Main {
 
       Parameter[] parameters = method.getParameters();
 
-      for (int i = 0; i < parameters.length; i++) {
-        System.out.print(parameters[i].getType().getName() + " " + parameters[i].getName());
+      for (int index = 0; index < parameters.length; index += 1) {
+        System.out.print(parameters[index].getType().getName() + " " + parameters[index].getName());
 
-        if (i < parameters.length - 1) {
+        if (index < parameters.length - 1) {
           System.out.print(", ");
         }
       }
