@@ -1,34 +1,19 @@
-class ExampleClass {
-    private int value;
-
-    public ExampleClass(int value) {
-      this.value = value;
-    };
-
-    public int getValue() {
-      return value;
-    };
-
-    public void swap(ExampleClass other) {
-      int temp = this.value;
-      this.value = other.value;
-      other.value = temp;
-    };
-};
-
 public class Main {
   public static void main(String[] args) {
-    ExampleClass obj1 = new ExampleClass(-10);
-    ExampleClass obj2 = new ExampleClass(10);
+    Character viking = new Character("Bjorn", 100, 30, 5);
+    Character ninja = new Character("Ninja", 80, 20, 30);
+
+    Wrapper vikingWrapper = new Wrapper(viking);
+    Wrapper ninjaWrapper = new Wrapper(ninja);
 
     System.out.println("Before:");
-    System.out.println("Object 1: " + obj1.getValue());
-    System.out.println("Object 2: " + obj2.getValue());
+    System.out.println("Viking: " + vikingWrapper.getInstance());
+    System.out.println("Ninja: " + ninjaWrapper.getInstance());
 
-    obj1.swap(obj2);
+    vikingWrapper.swap(ninjaWrapper);
 
     System.out.println("After:");
-    System.out.println("Object 1: " + obj1.getValue());
-    System.out.println("Object 2: " + obj2.getValue());
+    System.out.println("Viking: " + vikingWrapper.getInstance());
+    System.out.println("Ninja: " + ninjaWrapper.getInstance());
   };
 };
