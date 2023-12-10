@@ -1,0 +1,7 @@
+Instruction for launching the application:
+1. Go to the source code folder:
+  $ cd ./haffman/src
+2. Build the application (see build.txt)
+3. Run the application:
+  $ java Main [-a|-e|-t] ./path/to/file
+4. Use -a flag to archive a file, -e flag to extract an archive and -t flag to get compression information
