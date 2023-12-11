@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Map;
 
 public class Haffman {
@@ -26,19 +27,24 @@ public class Haffman {
   };
 
   public byte[] decode(String compressed, RecoveryMap recoveryMap) {
-    String decompressed = "";
+    ArrayList<Byte> result = new ArrayList<>();
     String current = "";
 
     for (int index = 0; index < compressed.length(); index += 1) {
       current += compressed.charAt(index);
 
       if (recoveryMap.containsKey(current)) {
-        decompressed += (char) (byte) recoveryMap.get(current);
+        result.add(recoveryMap.get(current));
         current = "";
       }
     }
 
-    return decompressed.getBytes();
+    byte[] decompressed = new byte[result.size()];
+    for (int i = 0; i < result.size(); i++) {
+      decompressed[i] = result.get(i);
+    }
+
+    return decompressed;
   };
 
   private String fillAdditionalZeros(String compressed) {
